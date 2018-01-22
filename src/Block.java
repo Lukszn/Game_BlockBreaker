@@ -7,6 +7,9 @@ import java.awt.Toolkit;
 public class Block extends Rectangle{
 
 	Image pic;
+	public int dx = 3;
+	int dy = -3;
+	boolean destroyed = false;
 	
 	Block(int a, int b, int w, int h, String s){
 		x = a;
@@ -17,8 +20,8 @@ public class Block extends Rectangle{
 	}
 	
 	public void draw(Graphics g, Component c) {
-		
-		g.drawImage(pic, x, y, width, height, c);
+		if(!destroyed)
+			g.drawImage(pic, x, y, width, height, c);
 		
 	}
 }
